@@ -13,7 +13,7 @@ public class MainMenu extends JFrame {
         // Window settings
         this.setSize(400,300);
         this.setLocationRelativeTo(null);
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         this.setResizable(false);
 
         // Components
@@ -35,13 +35,11 @@ public class MainMenu extends JFrame {
 
         // Event listeners
         firstCrudButton.addActionListener(actionEvent -> {
-            mainProduct nextView = new mainProduct();
-            nextView.setVisible(true);
+            new mainProduct().setVisible(true);
         });
 
         secondCrudButton.addActionListener(actionEvent -> {
-            mainStudent nextView = new mainStudent();
-            nextView.setVisible(true);
+            new mainStudent().setVisible(true);
         });
 
     }

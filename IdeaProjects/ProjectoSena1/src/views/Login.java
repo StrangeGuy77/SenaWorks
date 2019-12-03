@@ -1,14 +1,13 @@
 package views;
 
 import javax.swing.*;
-import controllers.mainController;
-import views.MainMenu;
+import controllers.MainController;
 
 class Login extends JFrame {
 
     Login(){
         // Window settings
-        this.setSize(280, 600);
+        this.setSize(280, 300);
         this.setLayout(null);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -44,7 +43,7 @@ class Login extends JFrame {
             String password = txt_password.getText();
 
             if (!username.isEmpty() && !password.isEmpty()) {
-                mainController controller = new mainController(false, false);
+                MainController controller = new MainController(false, false);
                 boolean confirmation = controller.login(username, password);
 
                 if (confirmation) {

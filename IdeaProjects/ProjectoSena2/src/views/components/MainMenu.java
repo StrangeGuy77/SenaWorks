@@ -7,28 +7,26 @@ import javax.swing.*;
 
 public class MainMenu extends JFrame {
 
-    MainMenu(){
+    MainMenu(String username){
         // Window settings
-        this.setSize(400,300);
+        this.setSize(600,400);
+        this.setLayout(null);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         this.setResizable(false);
+        this.setTitle("Menú principal");
 
         // Components
-        JLabel firstCrudLabel = new JLabel("Revisar productos");
-        firstCrudLabel.setBounds(0,0,0,0);
-        this.add(firstCrudLabel);
+        JLabel welcomeLabel= new JLabel("Bienvenido " + username + "!");
+        welcomeLabel.setBounds(20,30,220,20);
+        this.add(welcomeLabel);
 
-        JLabel secondCrudLabel = new JLabel("Revisar estudiantes");
-        secondCrudLabel.setBounds(0,0,0,0);
-        this.add(secondCrudLabel);
-
-        JButton firstCrudButton = new JButton("Abrir interfaz de productos");
-        firstCrudButton.setBounds(0,0,0,0);
+        JButton firstCrudButton = new JButton("Abrir interfaz de registros");
+        firstCrudButton.setBounds(20,110,250,150);
         this.add(firstCrudButton);
 
-        JButton secondCrudButton = new JButton("Abrir interfaz de estudiantes");
-        secondCrudButton.setBounds(0,0,0,0);
+        JButton secondCrudButton = new JButton("Abrir interfaz de empleados");
+        secondCrudButton.setBounds(330,110,250,150);
         this.add(secondCrudButton);
 
         // Event listeners
@@ -40,6 +38,10 @@ public class MainMenu extends JFrame {
             new Department().setVisible(true);
         });
 
+    }
+
+    public static void main(String[] args) {
+        new MainMenu("XD").setVisible(true);
     }
 
 }
